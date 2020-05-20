@@ -1,2 +1,2 @@
 # ENEL_525
-Assignments for Machine Learning Course
+Completed labs for Machine Learning Course

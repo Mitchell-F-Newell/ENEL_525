@@ -1,0 +1,69 @@
+[System]
+Name='Lab5'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Speed'
+Range=[-1 81]
+NumMFs=5
+MF1='Just_Rolling':'trimf',[-1 4.125 9.25]
+MF2='Slow':'trimf',[10.28 17.45 24.63]
+MF3='Medium':'trimf',[25.65 37.95 50.25]
+MF4='Fast':'trimf',[51.27 58.45 65.63]
+MF5='Speeding':'trimf',[66.65 73.83 81]
+
+[Input2]
+Name='Incline'
+Range=[-16 16]
+NumMFs=5
+MF1='Steep':'trimf',[-16 -13.33 -10.67]
+MF2='Slope':'trimf',[-10.67 -5.867 -1.067]
+MF3='Flat':'trimf',[-1.067 0 1.067]
+MF4='Up':'trimf',[1.067 5.867 10.67]
+MF5='Climb':'trimf',[10.67 13.33 16]
+
+[Output1]
+Name='output1'
+Range=[1 5]
+NumMFs=5
+MF1='Gear_1':'trimf',[1 1 1]
+MF2='Gear_2':'trimf',[2 2 2]
+MF3='Gear_3':'trimf',[3 3 3]
+MF4='Gear_4':'trimf',[4 4 4]
+MF5='Gear_5':'trimf',[5 5 5]
+
+[Rules]
+1 1, 2 (1) : 1
+1 2, 1 (1) : 1
+1 3, 1 (1) : 1
+1 4, 1 (1) : 1
+1 5, 1 (1) : 1
+2 1, 3 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+2 4, 1 (1) : 1
+2 5, 1 (1) : 1
+3 1, 4 (1) : 1
+3 2, 4 (1) : 1
+3 3, 3 (1) : 1
+3 4, 3 (1) : 1
+3 5, 2 (1) : 1
+4 1, 5 (1) : 1
+4 2, 5 (1) : 1
+4 3, 4 (1) : 1
+4 4, 4 (1) : 1
+4 5, 4 (1) : 1
+5 1, 5 (1) : 1
+5 2, 5 (1) : 1
+5 3, 5 (1) : 1
+5 4, 4 (1) : 1
+5 5, 4 (1) : 1
